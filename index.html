@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Tipcalculator</title>
+  </head>
+  <body>
+    <div class="maincontainer" id="container">
+      <div>
+        <h2 class="headding">Tipme Cal</h2>
+      </div>
+      <div class="container1">
+        <div class="bill-amount">
+          <h3>bill</h3>
+          <input type="number" placeholder="amount here" id="fullBill" />
+        </div>
+        <div class="slider-tip">
+          <h3>Selecct tip</h3>
+          <div id="tipPercentage"><span id="tipDisplay"></span> %</div>
+
+          <div class="slider-here">
+            <input
+              type="range"
+              id="tip-percentage"
+              min="0%"
+              max="100%"
+              class="range"
+            />
+          </div>
+        </div>
+        <div class="tip-display">
+          <h3>Tip</h3>
+          <h3 class="tip-value">$ <span id="tipPrice"></span></h3>
+        </div>
+        <div class="space-span"></div>
+        <div class="total-here">
+          <h2>Total</h2>
+          <h2>$ <span id="total"></span></h2>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="slider">
+          <h3>Amount of peps</h3>
+          <div id="aountOfMembers"></div>
+          <div class="slider-here">
+            <input
+              type="range"
+              id="peopleRange"
+              min="0"
+              max="10"
+              class="range"
+            />
+          </div>
+        </div>
+        <div class="tip-display">
+          <h3>Bill ecah</h3>
+          <h3>$ <span id="billEach"></span></h3>
+        </div>
+        <div class="tip-display">
+          <h2>Tip each</h2>
+          <h2>$ <span id="totalPerPerson"></span></h2>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
