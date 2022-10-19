@@ -1,0 +1,20 @@
+
+JAVASCRIPT FOR BEGINNERS
+FUNCTIONS
+
+
+
+(1)create a function that returns the sum of 2 numbers
+
+(2)create a function that calculates the area of a circle
+
+(3)create a function that cube (x^3) the given
+   elements in an array.
+   arr = [0, 1, 2, 5, 10]
+
+(4)create a function for a supper marcket that apply a equal discount
+   for all the items that we buyyou are given a 
+   array( prices=[10,20.50,400,1200,660]) of prices that a customer bought and
+   the discount rate (K=20%)
+
+    prices=[10,20.50,400,1200,660] , K=20%
