@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400&family=Be+Vietnam+Pro:wght@400;500;700&family=Jost:wght@200;300;500&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@200;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@400;600;800&display=swap");
+
+body {
+  font-family: "poppins";
+  background-image: url("https://images.unsplash.com/photo-1665207052691-bc2979476175?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+input {
+  font-family: poppins;
+  color: white;
+  background-color: rgba(17, 16, 16, 0.384);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 50px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.headding {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.container-1,
+.container-2 {
+  background: rgba(114, 113, 113, 0.171);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 40%;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.bill-amount,
+.tip-display,
+.total-here {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-input {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.space-span {
+  height: 5px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(17, 16, 16, 0.4);
+}
+
+.range {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(56, 54, 54, 0.3);
+  outline-color: rgb(87, 84, 84);
+  border-radius: 10px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 800px) {
+  .container-1,
+  .container-2 {
+    width: 100%;
+  }
+  .bill-amount {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+    <title>tip cal</title>
+  </head>
+  <body>
+    <div>
+      <h2 class="headding">Tip Calculator</h2>
+    </div>
+    <!-- main -container -->
+    <div class="main-container" id="container">
+      <!-- container 1 -->
+      <div class="container-1">
+        <!-- bill -->
+        <div class="bill-amount">
+          <h3>Bill</h3>
+          <input
+            type="numbre"
+            class="bill-input"
+            id="full-bill"
+            placeholder="amount here"
+          />
+        </div>
+        <!-- tip -->
+        <div class="slider-tip">
+          <h3>Select Tip</h3>
+          <div id="tip-percentage"><span id="tip-display"></span></div>
+
+          <div class="slider-here">
+            <input
+              type="range"
+              id="tipPercentage"
+              min="0%"
+              max="100%"
+              class="range"
+            />
+          </div>
+        </div>
+        <!-- display tip -->
+        <div class="tip-display">
+          <h3>Tip</h3>
+          <h3 class="tip-value">$ <span id="tipPrice"></span></h3>
+        </div>
+        <div class="space-span"></div>
+        <!-- display total -->
+        <div class="total-here">
+          <h2>Total</h2>
+          <h2>$ <span id="total"></span></h2>
+        </div>
+      </div>
+      <!-- container 2 -->
+      <div class="container-2">
+        <!-- amount of freinds -->
+        <div class="slider">
+          <h3>Amount of Freinds</h3>
+          <div id="freinds"></div>
+          <div class="slider-here">
+            <input
+              type="range"
+              id="amountOfFreinds"
+              min="0"
+              max="10"
+              class="range"
+            />
+          </div>
+        </div>
+        <!-- tip each -->
+        <div class="tip-display">
+          <h3>Tip Each</h3>
+          <h3>$ <span id="tipeach"></span></h3>
+        </div>
+        <!-- bill each -->
+        <div class="tip-display">
+          <h2>Bill Each</h2>
+          <h2>$ <span id="totalPerPerson"></span></h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
