@@ -5,7 +5,9 @@ import '../../constants/styles.dart';
 import '../../services/auth.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+  //function
+  final Function toggle;
+  const SignIn({Key? key, required this.toggle}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -43,52 +45,137 @@ class _SignInState extends State<SignIn> {
               Center(
                 child: Image.asset(
                   'assets/images/man.png',
-                  height: 200,
+                  height: 150,
                 ),
               ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    //email
-                    TextFormField(
-                      validator: (val) =>
-                          val!.isEmpty ? "Enter a valid email" : null,
-                      onChanged: (val) {
-                        setState(() {
-                          email = val;
-                        });
-                      },
-                    ),
-                    //password
-                    TextFormField(
-                      validator: (val) => val!.length < 6
-                          ? "Password must be at least 6 characters"
-                          : null,
-                      onChanged: (val) {
-                        setState(() {
-                          password = val;
-                        });
-                      },
-                    ),
-                    //google
-                    const SizedBox(height: 20),
-                    const Text(
-                      "Login with social accounts",
-                      style: descriptionStyle,
-                    ),
-                    const SizedBox(height: 20),
-                    Center(
-                      child: Image.asset(
-                        'assets/images/google.png',
-                        height: 50,
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      //email
+                      TextFormField(
+                        style: TextStyle(color: Colors.white),
+                        decoration: textInputDecoration,
+                        validator: (val) =>
+                            val!.isEmpty ? "Enter a valid email" : null,
+                        onChanged: (val) {
+                          setState(() {
+                            email = val;
+                          });
+                        },
                       ),
-                    ),
+                      const SizedBox(height: 20),
 
-                    //register
-                    //button
-                    //anon
-                  ],
+                      //password
+                      TextFormField(
+                        style: TextStyle(color: Colors.white),
+                        decoration:
+                            textInputDecoration.copyWith(hintText: "password"),
+                        validator: (val) => val!.length < 6
+                            ? "Password must be at least 6 characters"
+                            : null,
+                        onChanged: (val) {
+                          setState(() {
+                            password = val;
+                          });
+                        },
+                      ),
+                      //google
+                      const SizedBox(height: 20),
+                      const Text(
+                        "Login with social accounts",
+                        style: descriptionStyle,
+                      ),
+                      const SizedBox(height: 20),
+                      GestureDetector(
+                        //sing in with google
+                        onTap: () {},
+                        child: Center(
+                          child: Image.asset(
+                            'assets/images/google.png',
+                            height: 50,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      //register
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Do not have an account?",
+                            style: descriptionStyle,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            //go to the register page
+
+                            onTap: () {
+                              widget.toggle();
+                            },
+
+                            child: const Text(
+                              "REGISTER",
+                              style: TextStyle(
+                                  color: mainBlue, fontWeight: FontWeight.w600),
+                            ),
+                          )
+                        ],
+                      ),
+
+                      //button
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        //methode for login user
+                        onTap: () {},
+                        child: Container(
+                          height: 40,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              color: bgBlack,
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(width: 2, color: mainYellow)),
+                          child: const Center(
+                              child: Text(
+                            "LOGIN",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          )),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      //anon
+                      GestureDetector(
+                        //methode for login user
+                        onTap: () {},
+                        child: Container(
+                          height: 40,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              color: bgBlack,
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(width: 2, color: mainYellow)),
+                          child: const Center(
+                            child: Text(
+                              "LOGIN AS GUEST",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
