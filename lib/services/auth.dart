@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_auth/models/UserModel.dart';
 
@@ -44,7 +42,21 @@ class AuthServices {
   }
 
   //signin using email and password
+
+  Future signInUsingEmailAndPassword(String email, String password) async {
+    try {
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User? user = result.user;
+      return _userWithFirebaseUserUid(user);
+    } catch (err) {
+      print(err.toString());
+      return null;
+    }
+  }
+
   //sign in using gmail
+
   //signout
   Future signOut() async {
     try {

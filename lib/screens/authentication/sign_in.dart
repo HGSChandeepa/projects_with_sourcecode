@@ -22,6 +22,7 @@ class _SignInState extends State<SignIn> {
   //email password states
   String email = "";
   String password = "";
+  String error = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +71,7 @@ class _SignInState extends State<SignIn> {
 
                       //password
                       TextFormField(
+                        obscureText: true,
                         style: TextStyle(color: Colors.white),
                         decoration:
                             textInputDecoration.copyWith(hintText: "password"),
@@ -81,6 +83,12 @@ class _SignInState extends State<SignIn> {
                             password = val;
                           });
                         },
+                      ),
+                      const SizedBox(height: 20),
+
+                      Text(
+                        error,
+                        style: TextStyle(color: Colors.red),
                       ),
                       //google
                       const SizedBox(height: 20),
@@ -133,7 +141,16 @@ class _SignInState extends State<SignIn> {
                       ),
                       GestureDetector(
                         //methode for login user
-                        onTap: () {},
+                        onTap: () async {
+                          dynamic result = await _auth
+                              .signInUsingEmailAndPassword(email, password);
+
+                          if (result == null) {
+                            setState(() {
+                              error = "Could not signin with those credentials";
+                            });
+                          }
+                        },
                         child: Container(
                           height: 40,
                           width: 200,
@@ -155,8 +172,10 @@ class _SignInState extends State<SignIn> {
                       ),
                       //anon
                       GestureDetector(
-                        //methode for login user
-                        onTap: () {},
+                        //methode for login user as anon
+                        onTap: () async {
+                          await _auth.signInAnonymously();
+                        },
                         child: Container(
                           height: 40,
                           width: 200,
