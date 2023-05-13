@@ -16,6 +16,8 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("SIGN IN"),
+        backgroundColor: const Color(0xff121212),
+        elevation: 0,
       ),
       body: ElevatedButton(
         child: const Text("Sign in Anonymously"),
