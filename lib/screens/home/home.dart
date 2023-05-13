@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/services/auth.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,10 +9,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  //caeate a obj from AuthService
+  final AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text("Home"),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("HOME"),
+          actions: [
+            ElevatedButton(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              child: const Icon(Icons.logout),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
