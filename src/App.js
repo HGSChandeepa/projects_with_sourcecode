@@ -1,12 +1,17 @@
-import "./App.css";
-import Home from "./components/Home";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Apipage from "./pages/apipage";
+import DetailsPage from "./pages/detailsPage";
 
-function App() {
+const AppRouter = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Apipage />} />
+        <Route path="/detail/:postId" element={<DetailsPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
-export default App;
+export default AppRouter;
